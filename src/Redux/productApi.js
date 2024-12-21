@@ -14,6 +14,7 @@ export const productApi = createApi({
       query: () => "products/categories",
       providesTags:['products']
     }), 
+    
      
     
       

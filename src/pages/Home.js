@@ -1,9 +1,48 @@
-import React from 'react'
+import React,{useState} from "react";
+import Header from "../components/Header";
+import Products from "../components/Product";
+import Title from "../components/Title";
+import { useGetProductsQuery } from "../Redux/productApi";
+import Subscribe from "../components/Subscribe";
+
+import 'react-loading-skeleton/dist/skeleton.css'
 
 const Home = () => {
-  return (
-    <div>Home</div>
-  )
-}
+  const { data, isError, isLoading } = useGetProductsQuery();
+  
+  
+  
+  
 
-export default Home
+  
+  
+ 
+  return (
+    <div>
+      <Header />
+      <div className="container my-5 py-5">
+        <div className="row">
+          <div className="col-12 mb-5">
+           <Title text={'latest collection'}/>
+          </div>
+        </div>
+       
+        <div className="row justify-content-center">
+          {isError ? (
+            <div>Error loading</div>
+          ) : isLoading ? (<>
+          Loading ..........
+            </>
+          ) : data ? (
+            data.slice(0,10).map((product, index) => {
+              return <Products product={product} key={index} />;
+            })
+          ) : null}
+        </div>
+      </div>
+      <Subscribe/>
+    </div>
+  );
+};
+
+export default Home;

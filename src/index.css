@@ -1,3 +1,40 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Naskh+Arabic:wght@500&family=Noto+Sans+HK:wght@100..900&family=Outfit:wght@100..900&family=Permanent+Marker&family=Prata&family=Roboto&family=Tajawal&family=Work+Sans:wght@400;500;600;700;800&display=swap');
+*{
+  font-family: outfit;
+}
+.prata-regular {
+  font-family: "Prata", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+hr{
+  height: 5px;
+  background-color:black;
+  visibility: hidden;
+}
+a.active hr{
+  visibility: visible;
+}
+img:hover{
+  transform: scale(1.1);
+  transition: scale ease-in 0.6s;
+}
+.form-check-input{
+  border: solid 2px black;
+}
+
+
+
+
+
+
+
+
+
 .navbar-nav a{
   font-size: 18px;
 }

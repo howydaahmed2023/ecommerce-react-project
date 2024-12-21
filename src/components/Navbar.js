@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
   return (
@@ -13,28 +13,28 @@ const Navbar = () => {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" href="#">Home</Link>
+          <NavLink className="nav-link active" aria-current="page" to="/">Home</NavLink>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" href="#">Products</Link>
+          <NavLink className="nav-link" to="/products">Products</NavLink>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" href="#">About</Link>
+          <NavLink className="nav-link" href="#">About</NavLink>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" href="#">Contact</Link>
+          <NavLink className="nav-link" href="#">Contact</NavLink>
         </li>
       </ul>
     <div className="buttons">
-<Link href="#" className='btn btn-primary'>
+<NavLink href="#" className='btn btn-primary'>
   <i className='fa fa-sign-in me-1'></i> login
-</Link>
-<Link href="#" className='btn btn-primary ms-2'>
+</NavLink>
+<NavLink href="#" className='btn btn-primary ms-2'>
   <i className='fa fa-user-plus me-1'></i> signup
-</Link>
-<Link href="#" className='btn btn-primary ms-2'>
+</NavLink>
+<NavLink href="#" className='btn btn-primary ms-2'>
   <i className='fa fa-shopping-cart me-1'></i> Cart (0)
-</Link>
+</NavLink>
     </div>
 
     </div>
