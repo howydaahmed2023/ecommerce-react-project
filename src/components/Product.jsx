@@ -15,7 +15,7 @@ const Products = ({product}) => {
   <div className="card-body">
   <h5 className="card-title mb-0"> {product.title.substring(0,12)}....</h5>
     <p className="card-text lead fw-bold"> price :${product.price}</p>
-    <Link href="#" className="btn btn-primary">Buy Me</Link>
+    <Link to={`/product/${product.id}`} className="btn btn-primary">Buy Me</Link>
   </div>
 </div>
         

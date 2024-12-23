@@ -4,6 +4,10 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Footer from './components/Footer'
 import AllProducts from './pages/AllProducts';
+import ProductDetail from './pages/ProductDetail';
+import Cart from './pages/Cart';
+import About from './pages/About';
+import Search from "./pages/Search"
 
 function App() {
   return (
@@ -14,6 +18,13 @@ function App() {
          <Route exact path="/" element={<Home />} /> 
          <Route exact path="/home" element={<Home />} /> 
          <Route exact path="/products" element={<AllProducts />} /> 
+         <Route exact path="/product/:id" element={<ProductDetail />} /> 
+         <Route exact path="/cart" element={<Cart />} /> 
+         <Route exact path="/about" element={<About />} /> 
+         <Route path="/search/:query" element={<Search/>}/>
+
+
+
 
       
 
