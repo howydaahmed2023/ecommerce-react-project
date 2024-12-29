@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useEffect} from "react";
 import Header from "../components/Header";
 import Products from "../components/Product";
 import Title from "../components/Title";
@@ -14,7 +14,11 @@ const Home = () => {
   const {data:products} = useGetDummyProductsQuery()
   console.log(products)
   
+  useEffect(() => {
+    
   
+    
+  }, [products]);
   
   
 
@@ -31,19 +35,20 @@ const Home = () => {
           </div>
         </div>
        
-        <div className="row justify-content-center">
+        <div className="row justify-content-around ">
           {isError ? (
             <div>Error loading</div>
           ) : isLoading ? (<>
           Loading ..........
             </>
           ) : data ? (
-            data.slice(0,10).map((product, index) => {
+            data.slice(0,12).map((product, index) => {
               return <Products product={product} key={index} />;
             })
           ) : null}
         </div>
-        <div className="row mt-5 mb-5 p-3">
+        <div className="row mt-5  p-3">
+          <Title text={"latest accessories"}/>
           {products ? (products.products.slice(0,15).map((product,index)=>{
             return (<DummyProducts key={index} product={product}/>)
           })) :null}

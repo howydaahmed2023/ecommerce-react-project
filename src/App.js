@@ -8,10 +8,13 @@ import ProductDetail from './pages/ProductDetail';
 import Cart from './pages/Cart';
 import About from './pages/About';
 import Search from "./pages/Search"
+import Login from './pages/Login';
+import SignupPage from './pages/SignupPage';
+import "./App.css"
 
 function App() {
   return (
-    <div >
+    <div className='background-theme1'   >
      <BrowserRouter>
       <Navbar/>
       <Routes>
@@ -22,6 +25,10 @@ function App() {
          <Route exact path="/cart" element={<Cart />} /> 
          <Route exact path="/about" element={<About />} /> 
          <Route path="/search/:query" element={<Search/>}/>
+         <Route exact path="/login" element={<Login />} /> 
+         <Route exact path="/signup" element={<SignupPage />} /> 
+
+
 
 
 

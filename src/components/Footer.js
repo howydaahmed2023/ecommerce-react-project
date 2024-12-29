@@ -3,8 +3,8 @@ import React from 'react'
 const Footer = () => {
   return (
     <div>
-        <div className="container-fluid bg-dark text-light ">
-        <div className="row  align-content-around p-3">
+        <div className="container-fluid  py-3 ">
+        <div className="row  align-content-around p-3 ">
           <div className="col-6">
             <h4 className="prata-regular mb-3">FOREVER</h4>
             <p>

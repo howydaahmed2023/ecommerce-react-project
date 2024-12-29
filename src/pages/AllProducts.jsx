@@ -1,14 +1,20 @@
-import React,{useState} from 'react'
-import { useGetProductsQuery } from '../Redux/productApi';
+import React,{useState,useEffect} from 'react'
+import { useGetProductByCategoryQuery, useGetProductsQuery } from '../Redux/productApi';
 import Title from '../components/Title';
 import Product from '../components/Product';
 const AllProducts = () => {
    const { data, isError, isLoading } = useGetProductsQuery();
+   
    const [filter,setFilter]=useState(data)
+   
    const filterProducts = (cat)=>{
     const updatedList  = data.filter((x)=>x.category === cat)
     setFilter(updatedList)
   }
+ 
+  
+ 
+
   return (
     <>
     <div className='container py-5 '>
@@ -21,7 +27,7 @@ const AllProducts = () => {
         <div className='col-3'>
           <p className='prata-regular fw-bold fs-4 mt-5'>Categories</p>
         <div className="form-check">
-  <input className="form-check-input" type="checkbox" onChange={()=>setFilter(data)} id="flexCheckChecked" />
+  <input className="form-check-input" type="checkbox" onChange={()=>setFilter(data)} id="flexCheckChecked" checked />
   <label className="form-check-label" htmlFor="flexCheckChecked">
     All Products
   </label>
@@ -50,6 +56,15 @@ const AllProducts = () => {
   men's clothing
   </label>
 </div>
+<div className='mt-5'>
+<select class="form-select w-50 h-50" aria-label="Default select example">
+  
+  <option value="asc" >lowToHigh</option>
+  <option value="desc">hightoLow</option>
+  
+</select>
+</div>
+
         </div>
         <div className='col-9'>
           <div className='row justify-content-center'>
